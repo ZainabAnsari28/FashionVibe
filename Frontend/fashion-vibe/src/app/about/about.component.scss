@@ -1,0 +1,147 @@
+.about-page {
+  font-family: 'Poppins', sans-serif;
+  color: #5f2105;
+  padding: 2rem;
+
+  .about-hero {
+    text-align: center;
+    background: linear-gradient(to right, #fff8f5, #f5e9e4);
+    padding: 3rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
+
+  .about-content {
+    section {
+      margin-bottom: 2rem;
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+
+      .member {
+        text-align: center;
+
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .cta {
+      text-align: center;
+
+      .explore-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.55rem 0.2rem;
+        background: linear-gradient(to right, #5f2105, #6d3415, #6e3f38, #7e615f);
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: #5f2105;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+    padding: 1rem;
+  }
+
+  .about-hero {
+    padding: 2rem 1rem;
+
+    h1 {
+      font-size: 5px;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .about-content section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-content section p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-members .member {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .cta .explore-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 5px;
+  }
+
+  .about-hero p {
+    font-size: 0.95rem;
+  }
+
+  .about-content section h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-content section p {
+    font-size: 0.9rem;
+  }
+
+  .cta .explore-btn {
+    font-size: 0.55rem;
+  }
+}
+

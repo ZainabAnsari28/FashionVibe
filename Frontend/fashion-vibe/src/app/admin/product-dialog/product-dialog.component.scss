@@ -1,0 +1,40 @@
+.dialog-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.dialog-form-container form {
+  width: 100%;
+  max-width: 500px;
+}
+
+mat-form-field.w-100 {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+mat-dialog-title {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #5f2105 !important;
+  font-weight: bold;
+  align-items: center;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.dialog-form-container input[type="file"] {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}

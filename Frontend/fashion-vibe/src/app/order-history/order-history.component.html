@@ -1,0 +1,41 @@
+<div class="order-history-container">
+  <h2>My Orders</h2>
+
+  <div *ngIf="orders.length === 0" class="empty-message">
+    You have no orders yet.
+  </div>
+<div *ngFor="let order of paginatedOrders" class="order-card">
+
+  <div class="order-header">
+    <span><strong>Order Date:</strong> {{ order.orderDate | date:'medium' }}</span>
+  </div>
+
+  <div class="order-summary">
+    <span><strong>Order ID:</strong> {{ order.id }}</span>
+    <span><strong>Total Items:</strong> {{ order.items.length }}</span>
+    <span><strong>Total Price:</strong> ₹{{ order.totalAmount || calculateTotal(order.items) }}</span>
+  </div>
+
+  <div class="order-items">
+    <div *ngFor="let item of order.items" class="order-item">
+      <img [src]="item.product.imageUrl" alt="{{ item.product.name }}" class="order-product-image" />
+      <div class="product-info">
+        <span class="product-name">{{ item.product.name }}</span>
+        <span class="product-qty">Qty: {{ item.quantity }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-status">
+    <span class="status-badge" [ngClass]="order.status.toLowerCase()">{{ order.status }}</span>
+  </div>
+  
+
+   
+</div> 
+  <div class="pagination-controls" *ngIf="totalPages > 1">
+    <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>

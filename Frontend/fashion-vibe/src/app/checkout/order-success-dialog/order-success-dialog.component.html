@@ -1,0 +1,9 @@
+<div class="success-container">
+  <div class="success-card">
+    <img src="assets/images/OrderConfirmed.png" alt="Order Confirmed" class="success-image" />
+    <h2 class="success-title">Thank you for your purchase!</h2>
+    <p class="success-message">We've received your order and will ship it in 5 to 7 business days.</p>
+    <p class="order-id"><strong>Your order number is:</strong> <span>{{ data.orderId }}</span></p>
+    <button mat-raised-button color="primary" (click)="close()">Continue Shopping</button>
+  </div>
+</div>

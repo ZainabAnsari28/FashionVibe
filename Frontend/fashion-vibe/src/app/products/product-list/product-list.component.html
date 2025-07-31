@@ -1,0 +1,41 @@
+
+<div class="product-page-wrapper">
+
+<div class="filter-bar">
+  <div class="filter-group">
+    <i class="material-icons">search</i>
+    <input
+      type="text"
+      placeholder="Search products..."
+      [(ngModel)]="searchQuery"
+      (input)="applyFilters()"
+    />
+  </div>
+
+<div class="filter-buttons">
+  <button mat-icon-button (click)="openFilterDialog()">
+    <img width="50" height="50"  src="https://img.icons8.com/windows/32/sorting-options.png" alt="sorting-options"/>
+  </button>
+
+  <button *ngIf="isFilterApplied" mat-stroked-button color="warn" (click)="clearFilters()">
+    <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/clear-filters.png" alt="clear-filters"/>
+  </button>
+</div>
+
+
+<div class="product-grid">
+  <mat-card *ngFor="let product of filteredProducts" class="product-card">
+    <mat-card-content>
+      <h3>{{ product.name }}</h3>
+      <p class="product-category">Category: {{ product.category }}</p>
+      <p class="product-size">Size: {{ product.size }}</p>
+      <h4>₹{{ product.price }}</h4>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button [routerLink]="['/products', product.id]">
+        View Details
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+</div>

@@ -1,0 +1,96 @@
+/* Font */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sidebar Layout */
+.filter-sidebar-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  min-width: 650px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Filter Labels */
+.filter-labels {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
+}
+
+.filter-labels button {
+  padding: 10px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.filter-labels button:hover {
+  background-color: #6e3f38;
+}
+
+.filter-labels button.active {
+  background-color: #e0e0e0;
+  border-left: 4px solid #3f51b5;
+  font-weight: bold;
+}
+
+/* Filter Options */
+.filter-options {
+  flex: 1;
+  padding-left: 10px;
+  overflow-y: auto;
+}
+
+/* Radio Buttons */
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Headings */
+h3 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 2-column layout for Category, Size, Price */
+.two-column-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 16px;
+}
+
+/* Gradient Buttons */
+.apply-btn {
+  color: white;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  background: linear-gradient(to right, #7e615f, #f5d8ed);
+  transition: opacity 0.3s ease;
+}
+
+.cancel-btn{
+  color: #7e615f;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+
+.cancel-btn:hover,
+.apply-btn:hover {
+  opacity: 0.9;
+  color: #6e3f38;
+}

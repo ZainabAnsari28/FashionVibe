@@ -1,0 +1,62 @@
+<div class="checkout-card">
+  <h2>Checkout</h2>
+
+  <div class="checkout-content">
+    <!-- Left: Payment Form -->
+    <form (ngSubmit)="submitPayment()" [formGroup]="paymentForm" class="checkout-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Payment Method</mat-label>
+        <mat-select formControlName="method" required>
+          <mat-option value="UPI">UPI</mat-option>
+          <mat-option value="CREDIT_CARD">Credit Card</mat-option>
+          <mat-option value="DEBIT_CARD">Debit Card</mat-option>
+        </mat-select> 
+      </mat-form-field>
+
+      <ng-container *ngIf="paymentForm.value.method === 'UPI'">
+        <mat-form-field appearance="fill">
+          <mat-label>UPI ID</mat-label>
+          <input matInput formControlName="upiId" placeholder="example@upi">
+        </mat-form-field>
+      </ng-container>
+
+      <ng-container *ngIf="paymentForm.value.method === 'CREDIT_CARD' || paymentForm.value.method === 'DEBIT_CARD'">
+        <mat-form-field appearance="fill">
+          <mat-label>Card Number</mat-label>
+          <input matInput formControlName="cardNumber" maxlength="16">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Expiry</mat-label>
+          <input matInput formControlName="expiry" placeholder="MM/YY">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>CVV</mat-label>
+          <input matInput formControlName="cvv" maxlength="3" type="password">
+        </mat-form-field>
+      </ng-container>
+
+      <button mat-raised-button color="primary" type="submit">Pay Now</button>
+    </form>
+
+    <!-- Divider -->
+    <div class="vertical-divider"></div>
+
+    <!-- Right: Order Summary -->
+    <div class="checkout-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-item" *ngFor="let item of cartItems">
+        <img [src]="item.product.imageUrl" alt="{{ item.product.name }}">
+        <div>
+          <p>{{ item.product.name }}</p>
+          <p>Qty: {{ item.quantity }}</p>
+          <p>₹{{ item.product.price * item.quantity }}</p>
+        </div>
+      </div>
+      <div class="summary-total">
+        <strong>Total: ₹{{ getTotal() }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

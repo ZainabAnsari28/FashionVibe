@@ -1,0 +1,39 @@
+<h2 mat-dialog-title>Filter Products</h2>
+
+<mat-dialog-content class="filter-sidebar">
+<div class="filter-section">
+  <h3>Category</h3>
+  <mat-radio-group [(ngModel)]="filters.category" class="two-column-group">
+    <mat-radio-button *ngFor="let cat of categories" [value]="cat">{{ cat }}</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<div class="filter-section">
+  <h3>Size</h3>
+  <mat-radio-group [(ngModel)]="filters.size" class="two-column-group">
+    <mat-radio-button *ngFor="let sz of sizes" [value]="sz">{{ sz }}</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<div class="filter-section">
+  <h3>Price</h3>
+  <mat-radio-group [(ngModel)]="filters.maxPrice" class="two-column-group">
+    <mat-radio-button *ngFor="let price of priceOptions" [value]="price.value">{{ price.label }}</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+
+  <div class="filter-section">
+    <h3>Sort By</h3>
+    <mat-radio-group [(ngModel)]="filters.sortOption">
+      <mat-radio-button value="lowToHigh">Price: Low to High</mat-radio-button>
+      <mat-radio-button value="highToLow">Price: High to Low</mat-radio-button>
+    </mat-radio-group>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button class="cancel-btn" (click)="close()">Cancel</button>
+  <button mat-flat-button class="apply-btn" (click)="apply()">Apply</button>
+</mat-dialog-actions>
+
