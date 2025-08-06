@@ -2,7 +2,6 @@
   <h2>Checkout</h2>
 
   <div class="checkout-content">
-    <!-- Left: Payment Form -->
     <form (ngSubmit)="submitPayment()" [formGroup]="paymentForm" class="checkout-form">
       <mat-form-field appearance="fill">
         <mat-label>Payment Method</mat-label>
@@ -39,11 +38,8 @@
 
       <button mat-raised-button color="primary" type="submit">Pay Now</button>
     </form>
-
-    <!-- Divider -->
     <div class="vertical-divider"></div>
 
-    <!-- Right: Order Summary -->
     <div class="checkout-summary">
       <h3>Order Summary</h3>
       <div class="summary-item" *ngFor="let item of cartItems">

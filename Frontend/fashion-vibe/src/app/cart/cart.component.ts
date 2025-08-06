@@ -51,8 +51,6 @@ decreaseQuantity(item: any) {
     });
   }
 }
-
-
   removeItem(item: any) {
     this.cartService.removeItem(item.id).subscribe({
       next: () => this.loadCart(),

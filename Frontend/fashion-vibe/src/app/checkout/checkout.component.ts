@@ -12,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { OrderSuccessDialogComponent } from './order-success-dialog/order-success-dialog.component';
 import { OrderFailedDialogComponent } from './order-failed-dialog/order-failed-dialog.component';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-checkout',
@@ -47,15 +48,14 @@ getTotal(): number {
 }
 
 submitPayment() {
-  this.http.post<any>('http://localhost:8080/api/orders/checkout', this.paymentForm.value)
+  this.http.post<any>(`${environment.apiUrl}/orders/checkout`, this.paymentForm.value)
     .subscribe({
       next: (res) => {
-        console.log('Response from backend:', res); // ✅ Yeh confirm karega ki id aa rahi hai
+        console.log('Response from backend:', res); 
 
-        // Agar response mein orderId 'id' key se aa rahi hai
         if (res && res.id) {
           this.dialog.open(OrderSuccessDialogComponent, {
-            data: { orderId: res.id }, // ✅ Yeh sahi hai
+            data: { orderId: res.id }, 
             width: '600px'
           });
         } else {

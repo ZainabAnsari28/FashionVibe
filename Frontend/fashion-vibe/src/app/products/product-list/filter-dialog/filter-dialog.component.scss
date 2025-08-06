@@ -1,9 +1,7 @@
-/* Font */
 body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Sidebar Layout */
 .filter-sidebar-layout {
   display: flex;
   flex-direction: row;
@@ -13,7 +11,6 @@ body {
   overflow-y: auto;
 }
 
-/* Filter Labels */
 .filter-labels {
   display: flex;
   flex-direction: column;
@@ -43,35 +40,30 @@ body {
   font-weight: bold;
 }
 
-/* Filter Options */
 .filter-options {
   flex: 1;
   padding-left: 10px;
   overflow-y: auto;
 }
 
-/* Radio Buttons */
 mat-radio-group {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-/* Headings */
 h3 {
   margin-top: 0;
   font-size: 16px;
   font-weight: 600;
 }
 
-/* 2-column layout for Category, Size, Price */
 .two-column-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px 16px;
 }
 
-/* Gradient Buttons */
 .apply-btn {
   color: white;
   font-weight: 500;

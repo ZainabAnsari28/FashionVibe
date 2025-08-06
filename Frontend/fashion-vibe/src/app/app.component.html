@@ -51,8 +51,6 @@
             </div>
 
             <nav class="nav-links">
-                <!-- <a routerLink="/product">Back</a> -->
-                    
                     <ng-container *ngIf="!isAdminUser(); else adminLinks">
                       <a routerLink="/product" title="Home"><img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/home.png" alt="home"/>Home</a>
                       <a routerLink="/orders" title="My Orders"><img width="25" height="25" src="https://img.icons8.com/external-solidglyph-m-oki-orlando/32/external-maximum-order-supply-chain-management-solid-solidglyph-m-oki-orlando.png" alt="external-maximum-order-supply-chain-management-solid-solidglyph-m-oki-orlando"/>My Orders</a>

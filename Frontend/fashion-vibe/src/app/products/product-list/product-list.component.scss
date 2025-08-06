@@ -12,9 +12,8 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
-
-  max-width: 1000px; /* Limit the width */
-  margin: 0 auto;    /* Center the grid horizontally */
+  max-width: 1000px; 
+  margin: 0 auto;   
 }
 
 .product-card {
@@ -30,9 +29,6 @@ background: linear-gradient(
    border: 1px solid #6e3f38;
    border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-
-
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(95, 33, 5, 0.3);

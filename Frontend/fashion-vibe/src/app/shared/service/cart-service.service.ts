@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class CartService {
-  private baseUrl = 'http://localhost:8080/api/cart';
+  private baseUrl = `${environment.apiUrl}/cart;`
 
   constructor(private http: HttpClient) {}
 
@@ -28,6 +29,6 @@ export class CartService {
   updateQuantity(productId: number, quantity: number): Observable<any> {
     const token = localStorage.getItem('token');
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.put(`http://localhost:8080/api/cart/update/${productId}`, quantity, { headers });
+    return this.http.put(`${this.baseUrl}/update/${productId}`, quantity, { headers });
   }
 }

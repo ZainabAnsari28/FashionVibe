@@ -55,7 +55,6 @@ export class ProductDialogComponent {
  
 save() {
   if (this.data.id) {
-    // Update existing product
     const updatedProduct: Product = {
       id: this.data.id,
       name: this.productForm.value.name,
@@ -63,7 +62,7 @@ save() {
       price: this.productForm.value.price,
       category: this.productForm.value.category,
       size: this.productForm.value.size,
-      imageUrl: this.data.imageUrl // Keep existing image if not changed
+      imageUrl: this.data.imageUrl 
     };
 
     this.adminService.updateProduct(this.data.id, updatedProduct).subscribe(() => {
@@ -71,7 +70,6 @@ save() {
     });
 
   } else {
-    // Add new product with image
     const formData = new FormData();
     formData.append('name', this.productForm.value.name);
     formData.append('description', this.productForm.value.description);
@@ -88,10 +86,6 @@ save() {
     });
   }
 }
-
-
-  
-  
 
   cancel() {
     this.dialogRef.close();

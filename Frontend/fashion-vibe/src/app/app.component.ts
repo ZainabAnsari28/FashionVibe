@@ -24,7 +24,6 @@ export class AppComponent implements OnInit {
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
 
-    // ✅ Listen to route changes
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {

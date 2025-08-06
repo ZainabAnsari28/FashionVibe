@@ -18,8 +18,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FormsModule } from '@angular/forms';
 
-
-
 @Component({
   selector: 'app-product-management',
   templateUrl: './product-management.component.html',
@@ -90,13 +88,6 @@ export class ProductManagementComponent implements OnInit {
   deleteProduct(id: number) {
     this.adminService.deleteProduct(id).subscribe(() => this.loadProducts());
   }
-
-//   applyFilter(event: Event) {
-//   const filterValue = (event.target as HTMLInputElement).value;
-//   this.dataSource.filter = filterValue.trim().toLowerCase();
-// }
-
-
 
 applyFilters() {
   this.dataSource.filter = this.searchQuery.trim().toLowerCase();
