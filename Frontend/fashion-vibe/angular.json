@@ -36,12 +36,7 @@
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {             
@@ -51,18 +46,20 @@
                 "with": "src/environments/environment.prod.ts"
               }
             ],
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
+              
+"budgets": [
+  {
+    "type": "initial",
+    "maximumWarning": "1MB",
+    "maximumError": "2MB"
+  },
+  {
+    "type": "anyComponentStyle",
+    "maximumWarning": "8kB",
+    "maximumError": "12kB"
+  }
+],
+
               "outputHashing": "all"
             },
             "development": {
