@@ -1,15 +1,14 @@
 {
   "name": "fashion-vibe",
   "version": "0.0.0",
-"scripts": {
-  "ng": "ng",
-  "build": "ng build --configuration production",
-  "start": "ng serve",
-  "test": "ng test",
-  "lint": "ng lint",
-  "e2e": "ng e2e"
-},
-
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build --configuration production",
+    "start": "ng serve",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "private": true,
   "dependencies": {
     "@angular/cdk": "^19.2.17",
@@ -28,7 +27,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.2.13",
-    "@angular/cli": "^19.2.13",
+    "@angular/cli": "^19.2.15",
     "@angular/compiler-cli": "^19.2.0",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
